@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Employee</title>
+        <link rel="stylesheet" href="{% static 'employees/css/styles.css' %}">
+    </head>
+    <body>
+        <h1>Create Employee</h1>
+        <form method="POST" action="{% url 'employee_create' %}">
+           
+<h1>{{ employee.first_name }} {{ employee.last_name }}</h1>
+<p>Position: {{ employee.position }}</p>
+<p>Email: {{ employee.email }}</p>
+<p>Base Salary: ${{ employee.base_salary }}</p>
+<p>Bonus: ${{ employee.bonus }}</p>
+<p>Deductions: ${{ employee.deduction }}</p>
+<p>Total Salary: ${{ salary }}</p>  
+
+        <a href="{% url 
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Create Employee</button>
+        </form>
+        <a href="{% url 'employee_list' %}">Back to Employee List</a>
+    </body>
